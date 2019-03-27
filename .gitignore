@@ -1,1 +1,9 @@
+# OSX cruft
 .DS_Store
+
+# VSCode
+.vscode
+
+# GCC compiler cruft
+*.stackdump
+*.exe
