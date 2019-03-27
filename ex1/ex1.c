@@ -1,6 +1,9 @@
 // Write a program that calls `fork()`. Before calling `fork()`, have the main process access a variable
-// (e.g., x) and set its value to something (e.g., 100). What value is the variable in the child process?
+// (e.g., x) and set its value to something (e.g., 100).
+// What value is the variable in the child process?
+//  Starts at the value set pre-fork, then updates to the child set value for the remainder of the lifetime of the child process.
 // What happens to the variable when both the child and parent change the value of x?
+//  The child-set value remains that way for the lifetime of the child, and the parent-set value remains that way for the lifetime of the parent. They're mutually exclusive that way.
 
 // ~~ Output ~~
 // $ ./ex1
