@@ -10,6 +10,23 @@
 int main(void)
 {
     // Your code here
+    int fark = fork();
+    if (fark < 0)
+    {
+        fprintf(stderr, "Failed to fork child process\n");
+        exit(1);
+    }
+    else if (fark == 0)
+    {
+        // Child
+        printf("hello\n");
+    }
+    else
+    {
+        // Parent
+        int wc = waitpid(fark, NULL, 0);
+        printf("goodbye\n");
+    }
 
     return 0;
 }
