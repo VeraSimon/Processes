@@ -26,8 +26,15 @@ int main(void)
     else if (fark == 0)
     {
         // Child
+        // -l: changes output to list format
+        // -a: shows all files, including hidden ones
+        // -h: human-readable file sizes
+        // (note: we could also bundle them all as a single arg `-lah`, but I separated them as a demo of passing more args)
         char *farkingArgs[] = {"ls", "-l", "-a", "-h", NULL};
         printf("The args: %s\n", farkingArgs);
+        // ~~ execvp() ~~
+        // v: vector formatted arguments
+        // p: includes system path, so the app can actually find `ls`
         execvp(farkingArgs[0], farkingArgs);
     }
     else
